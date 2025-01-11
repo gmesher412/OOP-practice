@@ -5,6 +5,7 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject playerObject;
     public GameObject player;
     public bool gameOver;
+    public UIController uIController;
 
     void Awake()
     {
@@ -13,6 +14,8 @@ public class GameController : MonoBehaviour
         player = Instantiate(playerObject, playerObject.transform.position, playerObject.transform.rotation);
 
         gameOver=false;
+
+        uIController = GameObject.Find("Canvas").GetComponent<UIController>();
     }
 
     void Singleton()
@@ -28,6 +31,8 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         gameOver = true;
-        Debug.Log("Game Over!");
+        uIController.GameOverDisplay();
     }
+
+
 }

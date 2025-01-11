@@ -7,6 +7,7 @@ public abstract class Unit : MonoBehaviour
     protected GameObject player;
     protected GameController gameController;
 
+
     protected virtual float UnitSpeed{get; set;}
     protected virtual float MaxVelocity {get; set;}
     public virtual int Health{get; protected set;}
@@ -40,6 +41,8 @@ public abstract class Unit : MonoBehaviour
     protected void TakeDamage(int damage)
     {
         Health -= damage;
+        gameController.uIController.UpdateHealth(Health);
+
         if(Health < 1)
         {
             string tag = gameObject.tag;
