@@ -15,7 +15,7 @@ public abstract class Unit : MonoBehaviour
     protected virtual void Awake()
     {
         unitRB = GetComponent<Rigidbody>();
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        gameController = GameController.Instance;
     }
 
     protected virtual void UnitMovement(Vector3 movementDirection)
@@ -40,12 +40,12 @@ public abstract class Unit : MonoBehaviour
 
     protected void TakeDamage(int damage)
     {
+        string tag = gameObject.tag;
         Health -= damage;
-        gameController.uIController.UpdateHealth(Health);
 
         if(Health < 1)
         {
-            string tag = gameObject.tag;
+
             Dies(tag);
         }
     }

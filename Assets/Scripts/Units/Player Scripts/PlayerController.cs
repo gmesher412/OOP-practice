@@ -30,6 +30,7 @@ public class PlayerController : Unit
         {
             int damage = other.gameObject.GetComponent<Enemy>().Damage;
             TakeDamage(damage);
+            gameController.uIController.UpdateHealth(Health);
         }
     }
 
@@ -38,7 +39,6 @@ public class PlayerController : Unit
         if(other.gameObject == range)
         {
             Vector3 currentVelocity = unitRB.linearVelocity;
-            // unitRB.linearVelocity = Vector3.zero;
             unitRB.AddForce(-currentVelocity, ForceMode.Impulse);
         }
     }
