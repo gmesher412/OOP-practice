@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class PlayerController : Unit
 {
-    [SerializeField] Vector3 moveValue;
+    Vector3 moveValue;
     InputController inputController;
     GameObject range;
     
-    void Start()
+    protected override void Awake()
     {
+        base.Awake();
         inputController = GetComponent<InputController>();
         Health = 6;
         UnitSpeed = 6;
