@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 429250276585506132}
   - component: {fileID: -2470885755785239374}
   - component: {fileID: -7521996986032216441}
+  - component: {fileID: -4452564060658389146}
   m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
+  m_Name: RegularEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +119,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3110789955196977433}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -149,4 +150,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec51416696ab24594000ac379cbf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+--- !u!114 &-4452564060658389146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3110789955196977433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e89bc07f0b27ee54d944906c4df9eeca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
